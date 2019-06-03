@@ -1,8 +1,8 @@
+# WinFetch
+
 <p align="center">
-	<b>WinFetch</b>
-	<br>
 	<i>Ported version of "screenfetch" from Linux.</i>
-	<br><br><br>
+	<br><br>
 	<img alt="Test" src="https://github.com/hXR16F/WinFetch/blob/master/media/Screenshot_1.png?raw=true">
 </p>
 

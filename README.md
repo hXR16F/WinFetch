@@ -1,5 +1,9 @@
+<center>
 # WinFetch
 Ported version of "screenfetch" from Linux.
+
+![screenshot](https://i.imgur.com/521v7p5.png)
+</center>
 
 # Usage
 Execute in **command prompt** (*must be in the same directory*):
@@ -16,6 +20,3 @@ Execute in **command prompt** (*must be in the same directory*):
 8. *CPU Name*
 9. *CPU Cores*
 10. *CPU Type* 
-
-# Screenshot
-![screenshot](https://i.imgur.com/521v7p5.png)

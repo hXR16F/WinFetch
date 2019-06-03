@@ -25,7 +25,7 @@ goto :eof
 	echo -cn 0x07
 	echo -cdcdcdcdn 0x0c "         ,.=:!!t3Z3z.,                    " 0x07 "%userprofile:~9%" 0x0f "@" 0x07 "%computername%"
 	echo -cdcdcdn 0x0c "        :tt:::tt333EE3                  " 0x07 "OS: " 0x0f "Microsoft %osname%"
-	echo -cdcdcdcdn 0x0c "        Et:::ztt33EEE  " 0x0a "@Ee.,      ..,   " 0x07 "OS version: " 0x0f "%osver%"
+	echo -cdcdcdcdn 0x0c "        Et:::ztt33EEE  " 0x0a "@Ee.,      ..,   " 0x07 "OS Version: " 0x0f "%osver%"
 	echo -cdcdcdcdn 0x0c "       ;tt:::tt333EE7 " 0x0a ";EEEEEEttttt33#   " 0x07 "Uptime: " 0x0f "%var%"
 	echo -cdcdcdcdn 0x0c "      :Et:::zt333EEQ. " 0x0a "SEEEEEttttt33QL   " 0x07 "Shell: " 0x0f "%shell%"
 	echo -cdcdcdcdn 0x0c "      it::::tt333EEF " 0x0a "@EEEEEEttttt33F    " 0x07 "Resolution: " 0x0f "%width%x%height%"

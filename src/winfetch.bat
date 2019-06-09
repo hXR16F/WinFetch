@@ -48,7 +48,7 @@ goto :eof
 	exit /b
 
 :: Functions
-	:wmicset
-		if not "%~1" equ "" (2>nul set %~2=%1)
-		goto :eof
-		
+:wmicset
+	if not "%~1" equ "" (2>nul set %~2=%1)
+	goto :eof
+	

@@ -22,29 +22,30 @@ goto :eof
 	for /f "delims=" %%i in ('wmic cpu get name') do ((echo %%i>> "temp.txt")&set line=1&for /f "tokens=*" %%a in (temp.txt) do ((if !line! equ 2 set "cpuname=%%a")&(set /a line+=1)))
 	
 	:: Find wrong informations
-	(echo %width%x%height%> "res.tmp") & (findstr /i /c:"screen desktop monitor" res.tmp && (set "resolution=n/a") || (set "resolution=%width%x%height%")) & del /f /q "res.tmp" >nul 2>&1
+	(echo %width%x%height%> "res.tmp") & (findstr /i /c:"screen desktop monitor" res.tmp && (set "resolution=n/a") || (set "resolution=%width%x%height%"))
 	
 	:: Display
 	echo -cn 0x07
-	echo -cdcdcdcdn 0x0c "         ,.=:!!t3Z3z.,                    " 0x07 "%userprofile:~9%" 0x0f "@" 0x07 "%computername%"
-	echo -cdcdcdn 0x0c "        :tt:::tt333EE3                  " 0x07 "OS: " 0x0f "Microsoft %osname%"
-	echo -cdcdcdcdn 0x0c "        Et:::ztt33EEE  " 0x0a "@Ee.,      ..,   " 0x07 "OS Version: " 0x0f "%osver%"
-	echo -cdcdcdcdn 0x0c "       ;tt:::tt333EE7 " 0x0a ";EEEEEEttttt33#   " 0x07 "Uptime: " 0x0f "%var%"
-	echo -cdcdcdcdn 0x0c "      :Et:::zt333EEQ. " 0x0a "SEEEEEttttt33QL   " 0x07 "Shell: " 0x0f "%shell%"
-	echo -cdcdcdcdn 0x0c "      it::::tt333EEF " 0x0a "@EEEEEEttttt33F    " 0x07 "Resolution: " 0x0f "%resolution%"
-	echo -cdcdcdcdn 0x0c "     ;3=*^```'*4EEV " 0x0a ":EEEEEEttttt33@.  " 0x07 "  OS Type: " 0x0f "%ostype%"
-	echo -cdcdcdcdcdn 0x09 "     ,.=::::it=., " 0x0c "` " 0x0a "@EEEEEEtttz33QF     " 0x07 "System Drive: " 0x0f "%systemdrive%"
-	echo -cdcdcdcdn 0x09 "    ;::::::::zt33)   " 0x0a "'4EEEtttji3P*      " 0x07 "CPU Name: " 0x0f "%cpuname%"
-	echo -cdcdcdcdcdcdn 0x09 "   :t::::::::tt33." 0x0e ":Z3z..  " 0x0a "`` " 0x0e ",..g.      " 0x07 "CPU Cores: " 0x0f "%number_of_processors%"
-	echo -cdcdcdcdn 0x09 "   i::::::::zt33F " 0x0e "AEEEtttt::::ztF       " 0x07 "CPU Type: " 0x0f "%processor_architecture%"
-	echo -cdcdn 0x09 "  ;:::::::::t33V " 0x0e ";EEEttttt::::t3      "
-	echo -cdcdn 0x09 "  E::::::::zt33L " 0x0e "@EEEtttt::::z3F      "
-	echo -cdcdn 0x09 " {3=*^```'*4E3) " 0x0e ";EEEtttt:::::tZ`      "
-	echo -cdcdn 0x09 "             `" 0x0e " :EEEEtttt::::z7       "
-	echo -cdcdn 0x09 "                " 0x0e " 'VEzjt:;;z>*`       "
+	echo -cdcdcdcdn 0x0c "         ,.=:!!t3Z3z.,                   " 0x07 "%userprofile:~9%" 0x0f "@" 0x07 "%computername%"
+	echo -cdcdcdn 0x0c "        :tt:::tt333EE3                 " 0x07 "OS: " 0x0f "Microsoft %osname%"
+	echo -cdcdcdcdn 0x0c "        Et:::ztt33EEE  " 0x0a "@Ee.,      ..,  " 0x07 "OS Version: " 0x0f "%osver%"
+	echo -cdcdcdcdn 0x0c "       ;tt:::tt333EE7 " 0x0a ";EEEEEEttttt33#  " 0x07 "Uptime: " 0x0f "%var%"
+	echo -cdcdcdcdn 0x0c "      :Et:::zt333EEQ. " 0x0a "SEEEEEttttt33QL  " 0x07 "Shell: " 0x0f "%shell%"
+	echo -cdcdcdcdn 0x0c "      it::::tt333EEF " 0x0a "@EEEEEEttttt33F   " 0x07 "Resolution: " 0x0f "%resolution%"
+	echo -cdcdcdcdn 0x0c "     ;3=*^```'*4EEV " 0x0a ":EEEEEEttttt33@. " 0x07 "  OS Type: " 0x0f "%ostype%"
+	echo -cdcdcdcdcdn 0x09 "     ,.=::::it=., " 0x0c "` " 0x0a "@EEEEEEtttz33QF    " 0x07 "System Drive: " 0x0f "%systemdrive%"
+	echo -cdcdcdcdn 0x09 "    ;::::::::zt33)   " 0x0a "'4EEEtttji3P*     " 0x07 "CPU Name: " 0x0f "%cpuname%"
+	echo -cdcdcdcdcdcdn 0x09 "   :t::::::::tt33." 0x0e ":Z3z..  " 0x0a "``" 0x0e ",..g.      " 0x07 "CPU Cores: " 0x0f "%number_of_processors%"
+	echo -cdcdcdcdn 0x09 "   i::::::::zt33F " 0x0e "AEEEtttt::::ztF      " 0x07 "CPU Type: " 0x0f "%processor_architecture%"
+	echo -cdcdn 0x09 "  ;:::::::::t33V " 0x0e ";EEEttttt::::t3     "
+	echo -cdcdn 0x09 "  E::::::::zt33L " 0x0e "@EEEtttt::::z3F     "
+	echo -cdcdn 0x09 " {3=*^```'*4E3) " 0x0e ";EEEtttt:::::tZ`     "
+	echo -cdcdn 0x09 "             `" 0x0e " :EEEEtttt::::z7      "
+	echo -cdcdn 0x09 "                " 0x0e " 'VEzjt:;;z>*`      "
 	
 	:: Delete temporary files
-	del /f /q "temp.txt"
+	del /f /q "temp.txt" >nul 2>&1
+	del /f /q "res.tmp" >nul 2>&1
 	
 	:: Close darkbox and exit
 	echo -cq 0x07

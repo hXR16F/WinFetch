@@ -14,6 +14,7 @@ goto :eof
 	:: Get informations
 	for /f "tokens=6,8,10 delims= " %%i in ('uptime.exe') do (set var=%%id %%jh %%km)
 	for /f "usebackq tokens=3,4,5" %%i in (`reg query "hklm\software\microsoft\windows NT\CurrentVersion" /v ProductName`) do set "osname=%%i %%j %%k"
+	if /i "%osname:~0,9%" equ "Microsoft" (set "osname_additional=") else (set "osname_additional=Microsoft ")
 	if defined ProgramFiles(x86) (set "ostype=x64") else (set "ostype=x86")
 	for /f "tokens=4-7 delims=[.] " %%i in ('ver') do (if /i "%%i" equ "Version" (set "osver=%%j.%%k.%%l.%%m") else (set "osver=%%i.%%j.%%k.%%l"))
 	for /f "usebackq delims=" %%i in ('%comspec%') do (set "shell=%%~nxi")
@@ -27,7 +28,7 @@ goto :eof
 	:: Display
 	echo -cn 0x07
 	echo -cdcdcdcdn 0x0c "         ,.=:!!t3Z3z.,                   " 0x07 "%userprofile:~9%" 0x0f "@" 0x07 "%computername%"
-	echo -cdcdcdn 0x0c "        :tt:::tt333EE3                 " 0x07 "OS: " 0x0f "Microsoft %osname%"
+	echo -cdcdcdn 0x0c "        :tt:::tt333EE3                 " 0x07 "OS: " 0x0f "%osname_additional%%osname%"
 	echo -cdcdcdcdn 0x0c "        Et:::ztt33EEE  " 0x0a "@Ee.,      ..,  " 0x07 "OS Version: " 0x0f "%osver%"
 	echo -cdcdcdcdn 0x0c "       ;tt:::tt333EE7 " 0x0a ";EEEEEEttttt33#  " 0x07 "Uptime: " 0x0f "%var%"
 	echo -cdcdcdcdn 0x0c "      :Et:::zt333EEQ. " 0x0a "SEEEEEttttt33QL  " 0x07 "Shell: " 0x0f "%shell%"

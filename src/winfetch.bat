@@ -23,7 +23,7 @@ goto :eof
 	for /f "delims=" %%i in ('wmic cpu get name') do ((echo %%i>> "temp.txt")&set line=1&for /f "tokens=*" %%a in (temp.txt) do ((if !line! equ 2 set "cpuname=%%a")&(set /a line+=1)))
 	
 	:: Find wrong informations
-	(echo %width%x%height%> "res.tmp") & (findstr /i /c:"screen desktop monitor" res.tmp && (set "resolution=n/a") || (set "resolution=%width%x%height%"))
+	(echo %width%x%height%> "res.tmp") & (findstr /i /c:"screen" res.tmp && (set "resolution=n/a") || (set "resolution=%width%x%height%"))
 	
 	:: Display
 	echo -cn 0x07

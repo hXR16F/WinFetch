@@ -8,9 +8,10 @@
 
 # Usage
 Execute in **command prompt** (*must be in the same directory*):
-> src/winfetch.bat
+`src/winfetch.bat`
 
 # Collected informations
+```
 1. *OS*
 2. *OS Version*
 3. *Uptime*
@@ -21,3 +22,8 @@ Execute in **command prompt** (*must be in the same directory*):
 8. *CPU Name*
 9. *CPU Cores*
 10. *CPU Type* 
+```
+
+# Donate
+If you support my work or like my projects, you can donate me some money. Thank you 💙\
+BTC: `bc1q9trutvumrfuwrdwj377xd7u2flyp527j6t6qh9`
